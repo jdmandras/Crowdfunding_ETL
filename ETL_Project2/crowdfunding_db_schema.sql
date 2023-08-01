@@ -10,11 +10,15 @@ CREATE table Category(
     category varchar(30) NOT NULL,
     Primary key (category_id))
 
+SELECT * FROM Category
+
 -- Subcategory data table
 CREATE table Subcategory(
     subcategory_id varchar(10) NOT NULL,
     subcategory varchar(10) NOT NULL,
     Primary key (subcategory_id))
+
+SELECT * FROM Subcategory
 
 -- Contacts table
 CREATE table Contacts(
@@ -24,12 +28,14 @@ CREATE table Contacts(
     Email varchar(50) NOT NULL,
     Primary key (Contact_id))
 
+SELECT * FROM Contacts
+
 -- Campaign table
 CREATE table Campaign(
     cf_id int NOT NULL,
     contact_id int NOT NULL,
     company_name varchar(50) NOT NULL,
-    description varchar(50) NOT NULL,
+    "description" varchar(50) NOT NULL,
     goal money NOT NULL,
     pledged money NOT NULL,
     outcome varchar(10) NOT NULL,
@@ -44,4 +50,6 @@ CREATE table Campaign(
     Foreign key (contact_id) references Contacts(contact_id),
     Foreign key (category_id) references Category(category_id),
     Foreign key (subcategory_id) references Subcategory(subcategory_id))
+
+SELECT * FROM Campaign
 
